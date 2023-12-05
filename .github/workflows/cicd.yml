@@ -14,25 +14,26 @@ jobs:
     name: Test & Build
     runs-on: ubuntu-22.04
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16.x
-    - name: Install dependencies
-      run: npm ci
-    - name: RUN TEST
-      run: npm run test
-    # TODO: Run tests here
-    # TODO: Run build here
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        run: npm ci
+      # TODO: Run tests here
+      - name: RUN TEST
+        run: npm run test
+      # TODO: Run build here
+      - name: RUN BUILD
+        run: npm run test
     # TODO: Deploy to github pages
-
 ## TIP
 ## to conditionally run a job or a step use the if key.
-# if: github.event_name == 'push' && github.ref == 'refs/heads/main' 
+# if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
-## TIP 
+## TIP
 ## deploy steps and permissions for the Github token needed to deploy to gh-pages
 #   permissions:
 #     contents: write
@@ -43,7 +44,7 @@ jobs:
 #         github_token: ${{ secrets.GITHUB_TOKEN }}
 #         publish_dir: ./dist
 
-## TIP: 
+## TIP:
 ## to deploy to GH pages, set this env var in the build step
 # - name: Build
 #   env:

@@ -17,7 +17,7 @@ var very_import_string = "España";
 
 test("Validar que se escriba en el formulario la palabra España", async () => {
   const { getByDisplayValue } = render(<Search />);
-  var search = getByDisplayValue("g");
+  var search = getByDisplayValue("");
 
   await user.type(search, "España");
 
