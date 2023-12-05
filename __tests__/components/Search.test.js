@@ -1,7 +1,8 @@
-import renderer from 'react-test-renderer'; //you will need this for the snapshot test
-import { cleanup, fireEvent, render } from '@testing-library/react'; //this is for the DOM testing
-import { screen } from '@testing-library/dom';//this is for the DOM testing
-import { Search } from '../../src/components/Search';
+import renderer from "react-test-renderer"; //you will need this for the snapshot test
+import { cleanup, fireEvent, render } from "@testing-library/react"; //this is for the DOM testing
+import { screen } from "@testing-library/dom"; //this is for the DOM testing
+import { Search } from "../../src/components/Search";
+import user from "@testing-library/user-event";
 
 //TODO: write a test that checks that the search field has some text typed in
 
@@ -12,26 +13,31 @@ import { Search } from '../../src/components/Search';
 
 //Start here: https://testing-library.com/docs/example-findByText
 //Look for the line that says: 'describe('findByText Examples', () => {'
+var very_import_string = "España";
 
-test('REPLACE_ME', async () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test("Validar que se escriba en el formulario la palabra España", async () => {
+  const { getByDisplayValue } = render(<Search />);
+  var search = getByDisplayValue("");
+
+  await user.type(search, "España");
+
+  expect(search.value).toBe("España");
 });
 
 //TODO: write a snapshot test that captures the Search.js component
 
 //Look at this doc to help you write the test: https://jestjs.io/docs/snapshot-testing
 
-test('Search box renders correctly', () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test("Search box renders correctly", () => {
+  expect("REPLACE_ME").toBe("REPLACE_ME");
 });
 
-
-//TODO: write a test to check that the Error component appears if no data 
+//TODO: write a test to check that the Error component appears if no data
 
 //is found from the call to the API. You will need another mock.
 
 //This is is a hard test to write - try the getCountryByName.test.js test first!
 
-test('REPLACE_ME', async () => {
-    expect("REPLACE_ME").toBe("REPLACE_ME");
+test("REPLACE_ME", async () => {
+  expect("REPLACE_ME").toBe("REPLACE_ME");
 });
