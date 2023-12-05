@@ -22,7 +22,8 @@ jobs:
         node-version: 16.x
     - name: Install dependencies
       run: npm ci
-       
+    - name: RUN TEST
+      run: npm run test
     # TODO: Run tests here
     # TODO: Run build here
     # TODO: Deploy to github pages
