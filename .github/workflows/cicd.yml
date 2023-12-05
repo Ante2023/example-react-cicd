@@ -29,27 +29,26 @@ jobs:
       - name: RUN BUILD
         run: npm run build
     # TODO: Deploy to github pages
-## TIP
-## to conditionally run a job or a step use the if key.
-# if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  ## TIP
+  ## to conditionally run a job or a step use the if key.
+  # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
-## TIP
-## deploy steps and permissions for the Github token needed to deploy to gh-pages
-#   permissions:
-#     contents: write
-#   steps:
-#     - name: Deploying to gh-pages
-#       uses: peaceiris/actions-gh-pages@v3
-#       with:
-#         github_token: ${{ secrets.GITHUB_TOKEN }}
-#         publish_dir: ./dist
+  ## TIP
+  ## deploy steps and permissions for the Github token needed to deploy to gh-pages
+  #   permissions:
+  #     contents: write
+  #   steps:
+  #     - name: Deploying to gh-pages
+  #       uses: peaceiris/actions-gh-pages@v3
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         publish_dir: ./dist
 
-## TIP:
-## to deploy to GH pages, set this env var in the build step
-# - name: Build
-#   env:
-#     VITE_APP_PUBLIC_URL: /<repo_name>/
-
+  ## TIP:
+  ## to deploy to GH pages, set this env var in the build step
+  # - name: Build
+  env:
+  VITE_APP_PUBLIC_URL: https://ante2023.github.io/example-react-cicd/
 ## TIP:
 ## If you need to share files between jobs upload them in the repo and download them in the destination job
 # - name: Uploading build files
