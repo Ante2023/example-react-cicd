@@ -35,20 +35,20 @@ jobs:
 
 ## TIP
 ## deploy steps and permissions for the Github token needed to deploy to gh-pages
-#   permissions:
-#     contents: write
-#   steps:
-#     - name: Deploying to gh-pages
-#       uses: peaceiris/actions-gh-pages@v3
-#       with:
-#         github_token: ${{ secrets.GITHUB_TOKEN }}
-#         publish_dir: ./dist
+      permissions:
+        contents: write
+        steps:
+          - name: Deploying to gh-pages
+            uses: peaceiris/actions-gh-pages@v3
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: ./dist
 
 ## TIP:
 ## to deploy to GH pages, set this env var in the build step
-# - name: Build
-#   env:
-#     VITE_APP_PUBLIC_URL: /<repo_name>/
+          - name: Build
+            env:
+              VITE_APP_PUBLIC_URL: https://github.com/Ante2023/example-react-cicd
 
 ## TIP:
 ## If you need to share files between jobs upload them in the repo and download them in the destination job
