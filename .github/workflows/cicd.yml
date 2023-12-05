@@ -27,7 +27,7 @@ jobs:
         run: npm run test
       # TODO: Run build here
       - name: RUN BUILD
-        run: npm run test
+        run: npm run build
     # TODO: Deploy to github pages
 ## TIP
 ## to conditionally run a job or a step use the if key.
